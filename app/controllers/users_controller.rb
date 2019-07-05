@@ -10,13 +10,18 @@ class UsersController < ApplicationController
 
   # this is called by POST-ing to /users (done by new.html.erb view)
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     if @user.save
       # handle successful save
     else
       render 'new'
     end
   end
-end
 
-# https://www.railstutorial.org/book/sign_up#fig-signup_failure_rails_debug
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+end
