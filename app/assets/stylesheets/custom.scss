@@ -190,3 +190,18 @@ input {
         color: $state-danger-text;
     }
 }
+
+.checkbox {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    span {
+        margin-left: 20px;
+        font-weight: normal;
+    }
+}
+
+// this is somehow scoped to the `remember_me` checkbox in session/new.html.erb?
+#session_remember_me {
+    width: auto;
+    margin-left: 0;
+}
